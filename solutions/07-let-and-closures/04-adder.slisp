@@ -1,0 +1,18 @@
+; === Closures with let ===
+
+(define (make-adder n)
+  (lambda (x) (+ x n)))
+
+(define result1 ((make-adder 100) 23))
+(define result2 (let add5 (make-adder 5) (add5 10)))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq result1 123 "make-adder 100 applied to 23 should be 123")
+(assert-eq result2 15 "let add5 = make-adder 5, add5 10 should be 15")
+(exit 0)

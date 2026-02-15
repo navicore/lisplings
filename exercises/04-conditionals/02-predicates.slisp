@@ -1,0 +1,27 @@
+; === Type Predicates ===
+;
+; SeqLisp has predicates to check types:
+;   (number? x)  - is x a number?
+;   (string? x)  - is x a string?
+;   (null? x)    - is x the empty list?
+;
+; Use these inside if/cond to branch on type.
+;
+; Your task: Define describe that returns a type string.
+
+; I AM NOT DONE
+
+(define (describe x)
+  "unknown")
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (describe 42) "number" "describe 42 should be number")
+(assert-eq (describe "hi") "string" "describe hi should be string")
+(assert-eq (describe '()) "empty" "describe empty list should be empty")
+(exit 0)

@@ -1,0 +1,17 @@
+; === List Predicates ===
+
+(define is-null (null? '()))
+(define is-list (list? (list 1 2)))
+(define are-equal (equal? (list 1 2) (list 1 2)))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq is-null #t "is-null should be #t (check null? on empty list)")
+(assert-eq is-list #t "is-list should be #t (check list? on a list)")
+(assert-eq are-equal #t "are-equal should be #t (compare equal lists)")
+(exit 0)

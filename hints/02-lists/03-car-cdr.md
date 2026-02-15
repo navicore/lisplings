@@ -1,0 +1,2 @@
+- `first-elem` should be `(car nums)`
+- `rest-elems` should be `(cdr nums)`

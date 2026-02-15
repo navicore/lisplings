@@ -1,0 +1,13 @@
+; === Building Lists with cons ===
+
+(define result (cons 1 (cons 2 (cons 3 '()))))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq result (list 1 2 3) "result should be (1 2 3)")
+(exit 0)

@@ -1,0 +1,13 @@
+; === map: Transform Every Element ===
+
+(define result (map (lambda (x) (* x 2)) (list 1 2 3 4)))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq result (list 2 4 6 8) "result should be (2 4 6 8)")
+(exit 0)

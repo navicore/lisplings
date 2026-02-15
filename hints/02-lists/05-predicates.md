@@ -1,0 +1,3 @@
+- `(null? '())` returns `#t` — pass it the empty list
+- `(list? (list 1 2))` returns `#t` — pass it an actual list
+- `(equal? (list 1 2) (list 1 2))` returns `#t` — compare equal lists

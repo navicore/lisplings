@@ -1,0 +1,14 @@
+; === Nested Lists ===
+
+(define nested (list (list 'a 'b) (list 'c 'd)))
+(define result (car (cdr (car nested))))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq result 'b "result should be the symbol b")
+(exit 0)

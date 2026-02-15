@@ -1,0 +1,3 @@
+- Set `is-true` to `#t`
+- Set `is-false` to `#f`
+- For `negated`, use `(if is-true #f #t)` to negate: when true, return false.

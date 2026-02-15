@@ -1,0 +1,21 @@
+; === Reversing a List ===
+
+(define (reverse-helper remaining acc)
+  (if (null? remaining)
+      acc
+      (reverse-helper (cdr remaining) (cons (car remaining) acc))))
+
+(define (my-reverse lst)
+  (reverse-helper lst '()))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (my-reverse (list 1 2 3)) (list 3 2 1) "reverse (1 2 3) should be (3 2 1)")
+(assert-eq (my-reverse '()) '() "reverse () should be ()")
+(assert-eq (my-reverse (list 'a)) (list 'a) "reverse (a) should be (a)")
+(exit 0)

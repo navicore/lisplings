@@ -1,0 +1,32 @@
+; === Functions Returning Functions ===
+;
+; A function can return another function:
+;   (define (make-adder n)
+;     (lambda (x) (+ x n)))
+;
+;   (define add10 (make-adder 10))
+;   (add10 5)  => 15
+;
+; This is called a closure: the returned lambda
+; captures the value of n from its environment.
+;
+; Your task: Define make-adder and use it.
+
+; I AM NOT DONE
+
+(define (make-adder n)
+  (lambda (x) 0))
+
+(define add10 (make-adder 0))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (add10 5) 15 "add10 5 should be 15")
+(assert-eq (add10 0) 10 "add10 0 should be 10")
+(assert-eq ((make-adder 3) 7) 10 "make-adder 3 applied to 7 should be 10")
+(exit 0)

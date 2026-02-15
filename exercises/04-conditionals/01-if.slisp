@@ -1,0 +1,25 @@
+; === if Expressions ===
+;
+; (if test then-expr else-expr) evaluates test. If true,
+; returns then-expr; otherwise returns else-expr.
+;
+;   (if (> 5 3) "yes" "no")  => "yes"
+;
+; Your task: Define abs-val that returns the absolute value.
+
+; I AM NOT DONE
+
+(define (abs-val n)
+  n)
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (abs-val -5) 5 "abs-val of -5 should be 5")
+(assert-eq (abs-val 3) 3 "abs-val of 3 should be 3")
+(assert-eq (abs-val 0) 0 "abs-val of 0 should be 0")
+(exit 0)

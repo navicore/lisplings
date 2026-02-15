@@ -1,0 +1,23 @@
+; === Defining Variables ===
+;
+; (define name value) binds a name to a value:
+;   (define pi 3.14)
+;   (define greeting "hello")
+;
+; Your task: Define the variables so the tests pass.
+
+; I AM NOT DONE
+
+(define pi 0)
+(define greeting "")
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq pi 3.14 "pi should be 3.14")
+(assert-eq greeting "hello" "greeting should be hello")
+(exit 0)

@@ -1,0 +1,14 @@
+; === Numbers and Arithmetic ===
+;
+; SeqLisp uses prefix notation for math. Instead of writing
+; 2 + 3, you write (+ 2 3). The operator comes first.
+;
+; Basic operators: +  -  *  /
+;
+; You can nest them: (+ 1 (* 2 3)) => 7
+;
+; Your task: Fix the expression so it prints 42.
+
+; I AM NOT DONE
+
+(print (+ 10 20))

@@ -1,0 +1,24 @@
+; === Recursive Sum ===
+;
+; Follow the same pattern as my-length:
+;   Base case: empty list => 0
+;   Recursive: add (car lst) to sum of (cdr lst)
+;
+; Your task: Define my-sum that sums all numbers in a list.
+
+; I AM NOT DONE
+
+(define (my-sum lst)
+  0)
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (my-sum (list 1 2 3 4 5)) 15 "sum of (1 2 3 4 5) should be 15")
+(assert-eq (my-sum '()) 0 "sum of () should be 0")
+(assert-eq (my-sum (list 10)) 10 "sum of (10) should be 10")
+(exit 0)

@@ -1,0 +1,18 @@
+; === Recursive Length ===
+
+(define (my-length lst)
+  (if (null? lst)
+      0
+      (+ 1 (my-length (cdr lst)))))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (my-length (list 1 2 3)) 3 "length of (1 2 3) should be 3")
+(assert-eq (my-length '()) 0 "length of () should be 0")
+(assert-eq (my-length (list 'a)) 1 "length of (a) should be 1")
+(exit 0)

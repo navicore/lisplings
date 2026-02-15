@@ -1,0 +1,26 @@
+; === Number Atoms ===
+;
+; Numbers are one of the basic atom types in Lisp. An atom
+; is anything that is not a list.
+;
+; Use (define name value) to bind a name to a value.
+;
+; Your task: Fix the definitions so the tests pass.
+
+; I AM NOT DONE
+
+(define x 0)
+(define y 0)
+(define result (+ x y))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq x 10 "x should be 10")
+(assert-eq y 32 "y should be 32")
+(assert-eq result 42 "result should be x + y = 42")
+(exit 0)

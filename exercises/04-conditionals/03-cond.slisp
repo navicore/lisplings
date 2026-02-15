@@ -1,0 +1,26 @@
+; === cond Expressions ===
+;
+; cond lets you test multiple conditions:
+;   (cond ((test1) expr1)
+;         ((test2) expr2)
+;         (else    default))
+;
+; Your task: Define classify that returns "positive",
+; "negative", or "zero".
+
+; I AM NOT DONE
+
+(define (classify n)
+  "zero")
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (classify 5) "positive" "classify 5 should be positive")
+(assert-eq (classify -3) "negative" "classify -3 should be negative")
+(assert-eq (classify 0) "zero" "classify 0 should be zero")
+(exit 0)

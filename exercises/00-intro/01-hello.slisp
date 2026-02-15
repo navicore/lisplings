@@ -1,0 +1,14 @@
+; === Hello, Lisplings! ===
+;
+; Welcome to Lisplings! In each exercise you will fix or
+; complete some SeqLisp code. When you are done, remove the
+; "; I AM NOT DONE" marker line below.
+;
+; In Lisp, everything is an expression wrapped in parentheses.
+; (print "text") prints a value.
+;
+; Your task: Change the string so it prints "Hello, Lisplings!"
+
+; I AM NOT DONE
+
+(print "Hello, World!")

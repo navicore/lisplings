@@ -1,0 +1,25 @@
+; === fold: Reduce a List ===
+;
+; (fold fn init lst) combines all elements into one value:
+;   (fold fn 0 (list 1 2 3))
+; computes fn(fn(fn(0, 1), 2), 3)
+;
+; IMPORTANT: You cannot pass bare operators like + to fold.
+; Wrap them in a lambda:
+;   (fold (lambda (a b) (+ a b)) 0 (list 1 2 3))  => 6
+;
+; Your task: Use fold to sum the list.
+
+; I AM NOT DONE
+
+(define result 0)
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq result 15 "result should be 15 (sum of 1..5)")
+(exit 0)

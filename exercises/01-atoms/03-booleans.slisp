@@ -1,0 +1,28 @@
+; === Boolean Atoms ===
+;
+; SeqLisp has two boolean values: #t (true) and #f (false).
+;
+; There is no built-in `not` function. You can negate a
+; boolean with the pattern:
+;   (if x #f #t)
+; This returns #f when x is true, and #t when x is false.
+;
+; Your task: Fix the definitions so the tests pass.
+
+; I AM NOT DONE
+
+(define is-true #f)
+(define is-false #t)
+(define negated (if is-true #t #f))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq is-true #t "is-true should be #t")
+(assert-eq is-false #f "is-false should be #f")
+(assert-eq negated #f "negated should negate is-true to #f")
+(exit 0)

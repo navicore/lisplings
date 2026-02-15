@@ -1,0 +1,23 @@
+; === let: Local Bindings ===
+;
+; (let name value body) binds name to value within body:
+;   (let x 10 (* x x))  => 100
+;
+; Note: SeqLisp's let takes exactly 3 arguments:
+; the name, the value, and the body expression.
+;
+; Your task: Use let to compute x * x where x is 10.
+
+; I AM NOT DONE
+
+(define result (let x 0 (* x x)))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq result 100 "result should be 100 (10 * 10)")
+(exit 0)

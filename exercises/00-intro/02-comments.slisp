@@ -1,0 +1,11 @@
+; === Comments ===
+;
+; In SeqLisp, semicolons start a comment. Everything after
+; a semicolon on a line is ignored by the interpreter.
+;
+; Below, someone accidentally commented out the code!
+; Uncomment the print statement so it runs without errors.
+
+; I AM NOT DONE
+
+; (print "Comments use semicolons!")

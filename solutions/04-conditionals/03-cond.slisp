@@ -1,0 +1,18 @@
+; === cond Expressions ===
+
+(define (classify n)
+  (cond ((> n 0) "positive")
+        ((< n 0) "negative")
+        (else "zero")))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (classify 5) "positive" "classify 5 should be positive")
+(assert-eq (classify -3) "negative" "classify -3 should be negative")
+(assert-eq (classify 0) "zero" "classify 0 should be zero")
+(exit 0)

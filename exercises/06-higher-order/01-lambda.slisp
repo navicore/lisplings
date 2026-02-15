@@ -1,0 +1,26 @@
+; === Lambda: Anonymous Functions ===
+;
+; (lambda (params...) body) creates a function without a name:
+;   (lambda (x) (* x x))
+;
+; You can bind it with define:
+;   (define square (lambda (x) (* x x)))
+;   (square 5)  => 25
+;
+; Your task: Define square using lambda.
+
+; I AM NOT DONE
+
+(define square (lambda (x) 0))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (square 5) 25 "square 5 should be 25")
+(assert-eq (square 0) 0 "square 0 should be 0")
+(assert-eq (square -3) 9 "square -3 should be 9")
+(exit 0)

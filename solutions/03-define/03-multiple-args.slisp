@@ -1,0 +1,16 @@
+; === Functions with Multiple Arguments ===
+
+(define (add a b) (+ a b))
+(define (multiply a b) (* a b))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (add 3 4) 7 "add 3 4 should be 7")
+(assert-eq (multiply 3 4) 12 "multiply 3 4 should be 12")
+(assert-eq (add 10 (multiply 2 3)) 16 "add 10 (multiply 2 3) should be 16")
+(exit 0)

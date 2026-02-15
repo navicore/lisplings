@@ -1,0 +1,13 @@
+; === fold: Reduce a List ===
+
+(define result (fold (lambda (a b) (+ a b)) 0 (list 1 2 3 4 5)))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq result 15 "result should be 15 (sum of 1..5)")
+(exit 0)

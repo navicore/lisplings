@@ -1,0 +1,13 @@
+; === let: Local Bindings ===
+
+(define result (let x 10 (* x x)))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq result 100 "result should be 100 (10 * 10)")
+(exit 0)

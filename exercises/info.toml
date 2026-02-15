@@ -1,0 +1,180 @@
+# Lisplings exercise index
+# Inspired by The Little Lisper
+
+# Chapter 0: Introduction
+[[exercises]]
+name = "00-01-hello"
+path = "exercises/00-intro/01-hello.slisp"
+mode = "compile"
+
+[[exercises]]
+name = "00-02-comments"
+path = "exercises/00-intro/02-comments.slisp"
+mode = "compile"
+
+[[exercises]]
+name = "00-03-numbers"
+path = "exercises/00-intro/03-numbers.slisp"
+mode = "compile"
+
+# Chapter 1: Atoms
+[[exercises]]
+name = "01-01-numbers"
+path = "exercises/01-atoms/01-numbers.slisp"
+mode = "test"
+
+[[exercises]]
+name = "01-02-strings"
+path = "exercises/01-atoms/02-strings.slisp"
+mode = "test"
+
+[[exercises]]
+name = "01-03-booleans"
+path = "exercises/01-atoms/03-booleans.slisp"
+mode = "test"
+
+[[exercises]]
+name = "01-04-symbols"
+path = "exercises/01-atoms/04-symbols.slisp"
+mode = "test"
+
+# Chapter 2: Lists
+[[exercises]]
+name = "02-01-list"
+path = "exercises/02-lists/01-list.slisp"
+mode = "test"
+
+[[exercises]]
+name = "02-02-cons"
+path = "exercises/02-lists/02-cons.slisp"
+mode = "test"
+
+[[exercises]]
+name = "02-03-car-cdr"
+path = "exercises/02-lists/03-car-cdr.slisp"
+mode = "test"
+
+[[exercises]]
+name = "02-04-nested"
+path = "exercises/02-lists/04-nested.slisp"
+mode = "test"
+
+[[exercises]]
+name = "02-05-predicates"
+path = "exercises/02-lists/05-predicates.slisp"
+mode = "test"
+
+# Chapter 3: Define
+[[exercises]]
+name = "03-01-variables"
+path = "exercises/03-define/01-variables.slisp"
+mode = "test"
+
+[[exercises]]
+name = "03-02-functions"
+path = "exercises/03-define/02-functions.slisp"
+mode = "test"
+
+[[exercises]]
+name = "03-03-multiple-args"
+path = "exercises/03-define/03-multiple-args.slisp"
+mode = "test"
+
+[[exercises]]
+name = "03-04-using-functions"
+path = "exercises/03-define/04-using-functions.slisp"
+mode = "test"
+
+# Chapter 4: Conditionals
+[[exercises]]
+name = "04-01-if"
+path = "exercises/04-conditionals/01-if.slisp"
+mode = "test"
+
+[[exercises]]
+name = "04-02-predicates"
+path = "exercises/04-conditionals/02-predicates.slisp"
+mode = "test"
+
+[[exercises]]
+name = "04-03-cond"
+path = "exercises/04-conditionals/03-cond.slisp"
+mode = "test"
+
+[[exercises]]
+name = "04-04-nested"
+path = "exercises/04-conditionals/04-nested.slisp"
+mode = "test"
+
+# Chapter 5: Recursion
+[[exercises]]
+name = "05-01-countdown"
+path = "exercises/05-recursion/01-countdown.slisp"
+mode = "test"
+
+[[exercises]]
+name = "05-02-length"
+path = "exercises/05-recursion/02-length.slisp"
+mode = "test"
+
+[[exercises]]
+name = "05-03-sum"
+path = "exercises/05-recursion/03-sum.slisp"
+mode = "test"
+
+[[exercises]]
+name = "05-04-member"
+path = "exercises/05-recursion/04-member.slisp"
+mode = "test"
+
+[[exercises]]
+name = "05-05-reverse"
+path = "exercises/05-recursion/05-reverse.slisp"
+mode = "test"
+
+# Chapter 6: Higher-Order Functions
+[[exercises]]
+name = "06-01-lambda"
+path = "exercises/06-higher-order/01-lambda.slisp"
+mode = "test"
+
+[[exercises]]
+name = "06-02-map"
+path = "exercises/06-higher-order/02-map.slisp"
+mode = "test"
+
+[[exercises]]
+name = "06-03-filter"
+path = "exercises/06-higher-order/03-filter.slisp"
+mode = "test"
+
+[[exercises]]
+name = "06-04-fold"
+path = "exercises/06-higher-order/04-fold.slisp"
+mode = "test"
+
+[[exercises]]
+name = "06-05-compose"
+path = "exercises/06-higher-order/05-compose.slisp"
+mode = "test"
+
+# Chapter 7: Let and Closures
+[[exercises]]
+name = "07-01-let"
+path = "exercises/07-let-and-closures/01-let.slisp"
+mode = "test"
+
+[[exercises]]
+name = "07-02-nested-let"
+path = "exercises/07-let-and-closures/02-nested-let.slisp"
+mode = "test"
+
+[[exercises]]
+name = "07-03-closures"
+path = "exercises/07-let-and-closures/03-closures.slisp"
+mode = "test"
+
+[[exercises]]
+name = "07-04-adder"
+path = "exercises/07-let-and-closures/04-adder.slisp"
+mode = "test"

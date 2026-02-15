@@ -1,0 +1,15 @@
+; === Composing Functions ===
+
+(define (square x) (* x x))
+(define (sum-of-squares a b) (+ (square a) (square b)))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (square 5) 25 "square 5 should be 25")
+(assert-eq (sum-of-squares 3 4) 25 "sum-of-squares 3 4 should be 25")
+(exit 0)

@@ -1,0 +1,18 @@
+; === Closures ===
+
+(define (make-multiplier factor)
+  (lambda (x) (* factor x)))
+
+(define triple (make-multiplier 3))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (triple 7) 21 "triple 7 should be 21")
+(assert-eq (triple 0) 0 "triple 0 should be 0")
+(assert-eq ((make-multiplier 5) 4) 20 "make-multiplier 5, applied to 4, should be 20")
+(exit 0)

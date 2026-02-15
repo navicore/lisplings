@@ -1,0 +1,18 @@
+; === Functions Returning Functions ===
+
+(define (make-adder n)
+  (lambda (x) (+ x n)))
+
+(define add10 (make-adder 10))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (add10 5) 15 "add10 5 should be 15")
+(assert-eq (add10 0) 10 "add10 0 should be 10")
+(assert-eq ((make-adder 3) 7) 10 "make-adder 3 applied to 7 should be 10")
+(exit 0)

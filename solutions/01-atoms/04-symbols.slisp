@@ -1,0 +1,15 @@
+; === Symbol Atoms ===
+
+(define fruit 'apple)
+(define is-sym (symbol? fruit))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq fruit 'apple "fruit should be the symbol apple")
+(assert-eq is-sym #t "is-sym should be #t (check symbol? on a symbol)")
+(exit 0)

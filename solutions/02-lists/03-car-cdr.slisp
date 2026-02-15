@@ -1,0 +1,16 @@
+; === car and cdr ===
+
+(define nums (list 10 20 30))
+(define first-elem (car nums))
+(define rest-elems (cdr nums))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq first-elem 10 "first-elem should be 10")
+(assert-eq rest-elems (list 20 30) "rest-elems should be (20 30)")
+(exit 0)

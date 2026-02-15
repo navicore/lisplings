@@ -1,0 +1,16 @@
+; === if Expressions ===
+
+(define (abs-val n)
+  (if (< n 0) (- 0 n) n))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (abs-val -5) 5 "abs-val of -5 should be 5")
+(assert-eq (abs-val 3) 3 "abs-val of 3 should be 3")
+(assert-eq (abs-val 0) 0 "abs-val of 0 should be 0")
+(exit 0)

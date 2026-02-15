@@ -1,0 +1,26 @@
+; === Searching a List ===
+;
+; To search a list for a value:
+;   Base case: empty list => #f (not found)
+;   Check: is (car lst) what we want? => #t
+;   Recursive: search (cdr lst)
+;
+; Your task: Define my-member that returns #t if x is
+; in lst, #f otherwise.
+
+; I AM NOT DONE
+
+(define (my-member x lst)
+  #f)
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (my-member 3 (list 1 2 3 4)) #t "3 should be in (1 2 3 4)")
+(assert-eq (my-member 5 (list 1 2 3 4)) #f "5 should not be in (1 2 3 4)")
+(assert-eq (my-member 'a '()) #f "nothing is in the empty list")
+(exit 0)

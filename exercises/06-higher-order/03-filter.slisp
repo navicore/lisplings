@@ -1,0 +1,22 @@
+; === filter: Select Elements ===
+;
+; (filter fn lst) keeps only elements where fn returns #t:
+;   (filter (lambda (x) (> x 2)) (list 1 2 3 4))  => (3 4)
+;
+; To test if a number is even, check (equal? (modulo x 2) 0).
+;
+; Your task: Use filter to keep only even numbers.
+
+; I AM NOT DONE
+
+(define result (list 1 2 3 4 5 6))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq result (list 2 4 6) "result should be (2 4 6)")
+(exit 0)

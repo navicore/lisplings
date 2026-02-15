@@ -1,0 +1,31 @@
+; === Reversing a List ===
+;
+; The accumulator pattern: carry a result along as you
+; recurse. To reverse a list, move each element from
+; the front of the input to the front of an accumulator.
+;
+; Think of it as two stacks: pop from one, push to other.
+;
+; Your task: Define reverse-helper and my-reverse.
+; reverse-helper takes two arguments: the remaining list
+; and an accumulator that builds the reversed result.
+
+; I AM NOT DONE
+
+(define (reverse-helper remaining acc)
+  remaining)
+
+(define (my-reverse lst)
+  (reverse-helper lst '()))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (my-reverse (list 1 2 3)) (list 3 2 1) "reverse (1 2 3) should be (3 2 1)")
+(assert-eq (my-reverse '()) '() "reverse () should be ()")
+(assert-eq (my-reverse (list 'a)) (list 'a) "reverse (a) should be (a)")
+(exit 0)

@@ -1,0 +1,31 @@
+; === Simple Recursion ===
+;
+; A recursive function calls itself. Every recursive
+; function needs a base case (when to stop) and a
+; recursive case (how to continue).
+;
+;   (define (countdown n)
+;     (if (<= n 0)
+;         '()
+;         (cons n (countdown (- n 1)))))
+;
+; Your task: Define countdown that builds a list
+; counting down to 1.
+;   (countdown 3) => (3 2 1)
+
+; I AM NOT DONE
+
+(define (countdown n)
+  '())
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (countdown 3) (list 3 2 1) "countdown 3 should be (3 2 1)")
+(assert-eq (countdown 1) (list 1) "countdown 1 should be (1)")
+(assert-eq (countdown 0) '() "countdown 0 should be ()")
+(exit 0)

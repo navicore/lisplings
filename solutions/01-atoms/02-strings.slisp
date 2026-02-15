@@ -1,0 +1,15 @@
+; === String Atoms ===
+
+(define greeting "hello")
+(define len (string-length greeting))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq greeting "hello" "greeting should be hello")
+(assert-eq len 5 "len should be 5")
+(exit 0)

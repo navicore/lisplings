@@ -1,0 +1,26 @@
+; === car and cdr ===
+;
+; (car lst) returns the first element of a list.
+; (cdr lst) returns everything after the first element.
+;
+;   (car (list 10 20 30))  => 10
+;   (cdr (list 10 20 30))  => (20 30)
+;
+; Your task: Extract the first element and the rest.
+
+; I AM NOT DONE
+
+(define nums (list 10 20 30))
+(define first-elem 0)
+(define rest-elems '())
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq first-elem 10 "first-elem should be 10")
+(assert-eq rest-elems (list 20 30) "rest-elems should be (20 30)")
+(exit 0)

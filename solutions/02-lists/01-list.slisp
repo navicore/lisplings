@@ -1,0 +1,15 @@
+; === Creating Lists ===
+
+(define my-list (list 1 2 3))
+(define empty '())
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq my-list (list 1 2 3) "my-list should be (1 2 3)")
+(assert-eq empty '() "empty should be the empty list")
+(exit 0)

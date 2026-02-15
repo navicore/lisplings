@@ -1,0 +1,2 @@
+- Change `'banana` to `'apple`
+- Change `(symbol? 42)` to `(symbol? fruit)` — fruit is a symbol!

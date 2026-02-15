@@ -1,0 +1,3 @@
+; === Comments ===
+
+(print "Comments use semicolons!")

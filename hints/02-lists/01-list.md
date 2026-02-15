@@ -1,0 +1,2 @@
+- Use `(list 1 2 3)` to create a list with three elements.
+- Use `'()` for the empty list.

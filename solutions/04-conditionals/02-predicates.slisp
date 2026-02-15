@@ -1,0 +1,19 @@
+; === Type Predicates ===
+
+(define (describe x)
+  (if (number? x) "number"
+      (if (string? x) "string"
+          (if (null? x) "empty"
+              "other"))))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq (describe 42) "number" "describe 42 should be number")
+(assert-eq (describe "hi") "string" "describe hi should be string")
+(assert-eq (describe '()) "empty" "describe empty list should be empty")
+(exit 0)

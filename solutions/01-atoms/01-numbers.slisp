@@ -1,0 +1,17 @@
+; === Number Atoms ===
+
+(define x 10)
+(define y 32)
+(define result (+ x y))
+
+;; ===== Tests - do not edit below this line =====
+(define (assert-eq actual expected msg)
+  (if (equal? actual expected)
+      #t
+      (begin (print (list 'FAIL msg 'expected expected 'got actual))
+             (exit 1))))
+
+(assert-eq x 10 "x should be 10")
+(assert-eq y 32 "y should be 32")
+(assert-eq result 42 "result should be x + y = 42")
+(exit 0)
