@@ -1,0 +1,16 @@
+# Rust build artifacts
+target/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# User progress tracking (if we add this later)
+.lisplings-state.json
