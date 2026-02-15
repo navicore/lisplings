@@ -449,6 +449,9 @@ fn display_current_exercise(
                 }
             }
 
+            // Show program output (runs the exercise regardless of status)
+            show_exercise_output(exercise);
+
             println!();
             println!("  {} lisplings hint", "Hint:".cyan());
             show_progress(exercises, cache);
@@ -466,6 +469,45 @@ fn display_current_exercise(
             show_progress(exercises, cache);
             println!("\n{}", "You're now a Lisp programmer!".cyan().bold());
             process::exit(0);
+        }
+    }
+}
+
+/// Run an exercise and display its output, filtering test framework noise.
+/// This gives a REPL-like experience: edit, save, see output instantly.
+fn show_exercise_output(exercise: &Exercise) {
+    if let Ok(output) = runner::run(&exercise.path) {
+        // Filter out lines that are just test framework noise:
+        // - bare "#t" from passing assertions
+        // - duplicate lines (seqlisp prints each value twice)
+        let mut seen_lines: Vec<String> = Vec::new();
+        let interesting: Vec<&str> = output
+            .lines()
+            .filter(|line| {
+                let trimmed = line.trim();
+                // Skip bare #t (assertion pass results)
+                if trimmed == "#t" {
+                    return false;
+                }
+                // Deduplicate consecutive identical lines
+                let line_str = line.to_string();
+                if seen_lines.last() == Some(&line_str) {
+                    return false;
+                }
+                seen_lines.push(line_str);
+                true
+            })
+            .collect();
+
+        if !interesting.is_empty() {
+            println!("\n  {}", "Output:".cyan().bold());
+            for line in interesting.iter().take(15) {
+                if line.starts_with("Error") || line.contains("FAIL") {
+                    println!("  {}", line.red());
+                } else {
+                    println!("  {}", line);
+                }
+            }
         }
     }
 }

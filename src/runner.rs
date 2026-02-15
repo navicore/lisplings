@@ -9,30 +9,34 @@
 use std::path::Path;
 use std::process::Command;
 
-/// Run a SeqLisp file and check for errors (compile mode).
+/// Run a SeqLisp file and return its output.
 ///
-/// SeqLisp exits 0 even on errors, so we scan combined output for "Error".
-/// Returns Ok(()) if no errors found, Err with output otherwise.
-pub fn compile(path: &Path) -> Result<(), String> {
-    let output = Command::new("seqlisp")
-        .arg(path)
-        .output()
-        .map_err(|e| {
-            format!(
-                "Failed to run seqlisp: {}. Is seqlisp installed and in PATH?",
-                e
-            )
-        })?;
+/// Always returns the combined stdout+stderr. Does not judge success or
+/// failure — callers decide what to do with the output.
+pub fn run(path: &Path) -> Result<String, String> {
+    let output = Command::new("seqlisp").arg(path).output().map_err(|e| {
+        format!(
+            "Failed to run seqlisp: {}. Is seqlisp installed and in PATH?",
+            e
+        )
+    })?;
 
     let stdout = String::from_utf8_lossy(&output.stdout).to_string();
     let stderr = String::from_utf8_lossy(&output.stderr).to_string();
-    let combined = format!("{}{}", stdout, stderr);
+    Ok(format!("{}{}", stdout, stderr))
+}
 
-    // SeqLisp reports errors on stdout with "Error" prefix
+/// Run a SeqLisp file and check for errors (compile mode).
+///
+/// SeqLisp exits 0 even on errors, so we scan combined output for "Error".
+/// Returns Ok(output) if no errors found, Err(output) otherwise.
+pub fn compile(path: &Path) -> Result<String, String> {
+    let combined = run(path)?;
+
     if combined.lines().any(|l| l.starts_with("Error")) {
         Err(combined)
     } else {
-        Ok(())
+        Ok(combined)
     }
 }
 
@@ -41,21 +45,21 @@ pub fn compile(path: &Path) -> Result<(), String> {
 /// Test exercises embed assertion logic that calls `(exit 1)` on failure.
 /// We check both exit code and scan for "FAIL" in output.
 pub fn run_tests(path: &Path) -> Result<String, String> {
-    let output = Command::new("seqlisp")
-        .arg(path)
-        .output()
-        .map_err(|e| {
-            format!(
-                "Failed to run seqlisp: {}. Is seqlisp installed and in PATH?",
-                e
-            )
-        })?;
+    let output = Command::new("seqlisp").arg(path).output().map_err(|e| {
+        format!(
+            "Failed to run seqlisp: {}. Is seqlisp installed and in PATH?",
+            e
+        )
+    })?;
 
     let stdout = String::from_utf8_lossy(&output.stdout).to_string();
     let stderr = String::from_utf8_lossy(&output.stderr).to_string();
     let combined = format!("{}{}", stdout, stderr);
 
-    if !output.status.success() || combined.contains("FAIL") || combined.lines().any(|l| l.starts_with("Error")) {
+    if !output.status.success()
+        || combined.contains("FAIL")
+        || combined.lines().any(|l| l.starts_with("Error"))
+    {
         Err(combined)
     } else {
         Ok(combined)
