@@ -1,6 +1,6 @@
 [package]
 name = "lisplings"
-version = "0.1.0"
+version = "0.5.0"
 edition = "2024"
 description = "Interactive exercises for learning SeqLisp, a Lisp dialect"
 license = "MIT"
