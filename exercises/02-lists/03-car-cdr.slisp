@@ -6,13 +6,14 @@
 ;   (car (list 10 20 30))  => 10
 ;   (cdr (list 10 20 30))  => (20 30)
 ;
-; Your task: Extract the first element and the rest.
+; Your task: Use car and cdr to extract the first element and the rest.
+; Replace the ___ placeholders with expressions using car and cdr.
 
 ; I AM NOT DONE
 
 (define nums (list 10 20 30))
-(define first-elem 0)
-(define rest-elems '())
+(define first-elem (___))  ; use car
+(define rest-elems (___))  ; use cdr
 
 ;; ===== Tests - do not edit below this line =====
 (define (assert-eq actual expected msg)

@@ -7,11 +7,12 @@
 ; (car (cdr lst)) gets the second element.
 ;
 ; Your task: Extract the symbol 'b from the nested list.
+; Replace the ___ with an expression using car and cdr on nested.
 
 ; I AM NOT DONE
 
 (define nested (list (list 'a 'b) (list 'c 'd)))
-(define result 0)
+(define result (___))  ; navigate nested with car and cdr
 
 ;; ===== Tests - do not edit below this line =====
 (define (assert-eq actual expected msg)

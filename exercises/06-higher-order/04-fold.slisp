@@ -9,10 +9,12 @@
 ;   (fold (lambda (a b) (+ a b)) 0 (list 1 2 3))  => 6
 ;
 ; Your task: Use fold to sum the list.
+; Replace ___ with a lambda that adds two numbers.
 
 ; I AM NOT DONE
 
-(define result 0)
+(define nums (list 1 2 3 4 5))
+(define result (fold ___ 0 nums))
 
 ;; ===== Tests - do not edit below this line =====
 (define (assert-eq actual expected msg)
