@@ -1,3 +1,8 @@
+<!-- ghmig:moved -->
+> **This repository has moved to [https://git.navicore.tech/navicore/lisplings](https://git.navicore.tech/navicore/lisplings).**
+>
+> The GitHub copy is archived and no longer maintained.
+
 [![Release to crates.io](https://github.com/navicore/lisplings/actions/workflows/release.yml/badge.svg)](https://github.com/navicore/lisplings/actions/workflows/release.yml)
 [![lisplings](https://img.shields.io/crates/v/lisplings.svg?label=lisplings)](https://crates.io/crates/lisplings)
 
